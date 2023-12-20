@@ -1,4 +1,5 @@
-export const load = async () => {
-	const products = await (await import('$lib/dummy-products.json')).default;
-	return { products };
+import type { PageLoad } from './$types';
+
+export const load: PageLoad = ({ data }) => {
+	return { products: data.products, title: 'Products' };
 };
