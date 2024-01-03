@@ -19,7 +19,7 @@
 
 <nav>
     <a href="/">Home</a>
-    <a href="/products">Products</a>
+    <a href="/products" data-sveltekit-preload-data="hover">Products</a>
     {#if !data.user}
     <a href="/login">Login</a>
     {/if}
