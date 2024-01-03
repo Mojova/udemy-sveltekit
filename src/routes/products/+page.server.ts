@@ -10,5 +10,5 @@ export const load: PageServerLoad = async ({fetch}) => {
 			products: response.json()
 		}
 	}
-	throw error(response.status, response.statusText)
+	throw error(response.status, response.statusText);
 };

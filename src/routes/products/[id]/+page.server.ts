@@ -6,7 +6,7 @@ export const load: PageServerLoad = async ({params, fetch}) => {
     const productRes = await fetch(`https://dummyjson.com/products/${params.id}`);
 
     if (!productRes.ok) {
-        throw error(productRes.status, productRes.statusText);
+        throw error(productRes.status, {message: productRes.statusText, code: 'NOT_FOUND'});
     }
 
     const product = await productRes.json();
